@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script type="text/javascript" src="src/max_heap/animation_methods/genrate_tree_new_value.js"></script>
+  <script type="text/javascript" src="src/min_heap/animation_method/genrate_tree_new_value.js"></script>
+  <!----the tree visualizer class ----------------------------------------------------------------------------->
+  <script src="src/js/tree-visualizer.js"></script>
+  <script type="text/javascript" src="https://unpkg.com/animejs@3.2.1/lib/anime.min.js"></script>
+  <!----animated  heap script calling------------------------------------------------------------------>
+  <script type="text/javascript" src="DrawMinAni.js"></script>
+
+
+  <script src="src/min_heap/animation_method/genrate_tree_delete_value.js"></script>
+  <script src="src/max_heap/animation_methods/genrate_tree_delete_value.js"></script>
+  <!----functions min heap scirpt calling----------------------------------------------------------------->
+  <script src="src/min_heap/function_methods/sort.js"></script>
+  <script src="src/min_heap/function_methods/push-delete.js"></script>
+  <script src="src/min_heap/function_methods/clear_data.js"></script>
+  <!----functions max heap scirpt calling----------------------------------------------------------------->
+  <script src="src/max_heap/function_methods/max_sort.js"></script>
+  <script src="src/max_heap/function_methods/push_delete_clear_value.js"></script>
+  <!----emplment the bootstrab and icons-->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/all.min.css" />
+  <link rel="stylesheet" href="css/heap-tree.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500&display=swap" rel="stylesheet" />
+  <!--jquery-->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/jquery-1.12.4.js">
+  </script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js">
+  </script>
+  <title>www.algo-vis.com/heap-tree</title>
+  <script>
+    $(function () {
+      $("#acc").accordion({
+        animate: 500,
+      });
+    });
+
+  </script>
+</head>
+
+<body class="pb-4 ">
+
+  <nav>
+    <ul class="nav nav-pills">
+      <li class="nav-item">
+        <a class="nav-link " aria-current="page" href="index.htm"><img src="assets/img/Algo_vis white logo.png"
+            width="35"></a>
+      </li>
+      <li class="m-3" data-i18n="select" id="lang">Languages</li>
+      <li>
+        <select class="m-3">
+          <option value="en" data-i18n="english" selected>English</option>
+          <option value="ar" data-i18n="arabic">Arabic</option>
+        </select>
+      </li>
+
+    </ul>
+  </nav>
+
+
+  <div class="container ">
+    <div class="d-flex justify-content-center p-3 title">
+      <h2 class="" data-i18n="HeapD"> Heap
+        Data
+        Structure
+      </h2>
+    </div>
+    <div class="text-center">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/_u8YEHTfmH0" title="YouTube video player"
+        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+    </div>
+    <div class="countainer-info">
+      <div class="heap-info">
+        <div class="row">
+          <div class="col-md-12 mt-3">
+            <!--the definistion-->
+            <div id="acc">
+              <h3 data-i18n="WhatIs">What is Heap Data Structure?</h3>
+              <div class="row ">
+                <p class="pt-2 pl-5 pb-2 " data-i18n="AHeap">A Heap is a
+                  special Tree-based data
+                  structure in
+                  which the tree
+                  is a</p>
+                <p class="blue p-2" data-i18n="complete"> Complete binary
+                  tree</p>.
+              </div>
+
+              <!--the methods-->
+              <h3 data-i18n="Operations">Operations of Heap Data Structure:</h3>
+              <div>
+                <ul>
+                  <li data-i18n="Heapify" class="blue">
+                    Heapify:a process of creating a heap from an array.</li>
+                  <br>
+                  <li data-i18n="Insertion" class="blue">Insertion: process to
+                    insert an element in existing heap time Complexity O(log
+                    N).
+                  </li>
+                  <br>
+                  <li data-i18n="deleting" class="blue">Deletion: deleting the
+                    top
+                    element
+                    of the heap
+                    or the
+                    highest priority element, and then organizing the heap and
+                    returning the element with time
+                    complexity
+                    O(log N)
+                    <br>
+                  <li data-i18n="Peek" class="blue"> Peek: to check or find
+                    the most prior element in the heap, (max or min element
+                    for max and min heap).
+                  </li>
+                </ul>
+              </div>
+
+              <!--the type-->
+              <h3 data-i18n="Types">Types of Heap Data Structure</h3>
+              <div>
+                <p class="pl-5" data-i18n="Generally">Generally, Heaps can
+                  be of two types:</p>
+                <ol>
+                  <li data-i18n="InAMaxHeap" class="blue">Max-Heap: In a
+                    Max-Heap the key present at the root node must be
+                    greatest among the keys present at all of it's children.<br>
+                    The same property must be recursively true for all
+                    sub-trees in that Binary Tree.</li>
+                  <br>
+                  <li data-i18n="InAMinHeap" class="blue">Min-Heap: In a
+                    Min-Heap the key present at the root node must be
+                    minimum among the keys present at all of it's children.<br>
+                    The same property must be recursively true for all
+                    sub-trees in that Binary Tree.</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <div class="app-container row ">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="application">
+                <h3 class="text-center" data-i18n="Application">Application of Heap
+                  Data
+                  Structure</h3>
+                <ul>
+                  <li data-i18n="HeapIsUsed">Heap is used to construct a
+                    priority queue.
+                  </li>
+                  <li data-i18n="HeapSortIS" class="blue">Heap sort is one
+                    of the fastest sorting algorithms with time complexity
+                    of O(N* log(N), and it's easy to implement.
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 ">
+              <div class="real-time-application" id="acc">
+                <h3 class="text-center" data-i18n="RealTimeApplication">Real-Time
+                  Application of Heap</h3>
+                <ul>
+                  <li data-i18n="InAHospital" class="blue">Patient
+                    treatment: In a hospital, an emergency patient, or the
+                    patient with more injury is treated first. Here the
+                    priority is the degree of injury.</li>
+                  <br>
+                  <li data-i18n="UseHeapSort">
+                    Systems concerned with security use heap sort, like the
+                    Linux kernel.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <table class="table table-striped border rounded">
+            <tr>
+              <td class="blue text-center" data-i18n="Advantages">Advantages of Heap</td>
+              <td class="blue text-center" data-i18n="Disadvantages">Disadvantages of
+                Heap</td>
+            </tr>
+            <tr>
+              <td data-i18n="LessTimeComp" class="blue">Less time
+                complexity, for
+                inserting or deleting an element in the heap the time
+                complexity is just O(log N).</td>
+              <td data-i18n="TheTimeSearching" class="blue">The time
+                complexity for
+                searching
+                an element in Heap is
+                O(N).
+              </td>
+            </tr>
+            <tr>
+              <td data-i18n="ToJustPeek">To just peek at the most prior
+                element the time complexity
+                is constant O(1)</td>
+              <td data-i18n="ToPrintAll">To print all elements of the heap
+                in sorted order time
+                complexity is O(N*log N), whereas,
+                for BST, it takes only O(N)
+                time.</td>
+            </tr>
+            <tr>
+              <td data-i18n="EsaytoImp">A binary heap is a balanced binary
+                tree, and easy to
+                implement.</td>
+              <td data-i18n="Memory">Memory management is more complex in
+                heap
+                memory. </td>
+            </tr>
+            <tr></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="container p-2">
+      <h3 class="text-center" data-i18n="MINHeapVis"> Min Heap tree visualaiztion</h3>
+    </div>
+    <br>
+
+    <div class="container border rounded p-2 m-2">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12">
+          <button type="button" class="btn btn-primary p-2 m-1 " onclick="drawmyarrary();"
+            data-i18n="GenrateNewValue">genrate
+            tree <br>for new
+            value</button>
+          <button type="button" class="btn btn-primary p-2 m-1" onclick="removeAnimeted();"
+            data-i18n="GenratedeleteValue">genrate
+            tree <br>for delete a
+            value</button>
+          <div class="input-group mb-3 mt-1 w-100">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" onclick="pushData();"
+              data-i18n="PushData">Push
+              Data</button>
+            <input type="number" id="inputText" class="form-control" placeholder=""
+              aria-label="Example text with button addon" aria-describedby="button-addon1">
+          </div>
+
+          <div class="input-group mb-3 mt-1 w-100">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" onclick="deleteValue();"
+              data-i18n="DeleteValue">Delete
+              value</button>
+            <input id="deleteText" type="number" class="form-control" placeholder=""
+              aria-label="Example text with button addon" aria-describedby="button-addon1">
+          </div>
+          <button type="button" class="btn btn-primary " onclick="clearData();" data-i18n="Clear">CLEARE</button>
+        </div>
+        <div class="col-lg-8 col-md-8 col-sm-12" id="balanceBT" style="height:250px"></div>
+      </div>
+
+      <div>
+        <!--the array we process-->
+        <!--<p style="display:block ;"></p>-->
+      </div>
+    </div>
+    <div class="container p-2">
+      <h3 class="text-center" data-i18n="MAXHeapVis"> Max Heap tree visualaiztion</h3>
+    </div>
+
+    <div class="container border rounded p-3 m-2 ">
+      <div class="row">
+        <div class="col-lg-4 col-md-4 col-sm-12 row">
+          <button type="button" class="btn btn-primary p-2 m-1 " onclick="addAnimatedM();"
+            data-i18n="GenrateNewValue">genrate
+            tree <br>for new
+            value</button>
+          <button type="button" class="btn btn-primary p-2 m-1" onclick="removeAnimatedM();"
+            data-i18n="GenratedeleteValue">genrate
+            tree <br>for delete a
+            value</button>
+
+          <div class="input-group mb-3 mt-1 w-100">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1 inputTextMax"
+              onclick="pushValueM();" data-i18n="PushData">Push
+              Data</button>
+            <input type="number" id="inputTextMax" class="form-control" placeholder=""
+              aria-label="Example text with button addon" aria-describedby="button-addon1">
+          </div>
+
+          <div class="input-group mb-3 mt-1 w-100">
+            <button class="btn btn-outline-secondary" type="button" id="button-addon1" onclick="deleteValueM();"
+              data-i18n="DeleteValue">Delete
+              value</button>
+            <input id="deleteTextmax" type="number" class="form-control" placeholder=""
+              aria-label="Example text with button addon" aria-describedby="button-addon1">
+          </div>
+          <button type="button" class="btn btn-primary " onclick="clearM();" data-i18n="Clear">CLEARE</button>
+        </div>
+
+        <div class="col-lg-8 col-md-8 col-sm-12" id="balancemaxBT" style="height:250px"></div>
+      </div>
+
+      <div>
+        <!--the array we process-->
+        <!--<p style="display:block ;"></p>-->
+      </div>
+    </div>
+    <div class="p-3"></div>
+    <div class="quiz-body border rounded">
+      <h6 class="m-1 text-center" data-i18n="Still">Still have some doubt?</h6>
+      <div class="row">
+        <img id="quiz-img" src="assets/img/Quiz_Time.jpg" class="rounded
+              float-left pl-4 m-2 col-lg-4 col-md-6 col-sm-12" alt="Quiz
+              time
+              with speacker">
+        <p class="col-lg-4 col-md-6 col-sm-12 text-center " data-i18n="Quiz">You can Start a
+          POP-Quiz now!</p>
+        <img id="quiz-img" src="assets/img/Quiz_Time_r.jpg" class="rounded
+              float-right m-2 col-lg-4 col-md-6 col-sm-12" alt="Quiz
+              time
+              with speacker">
+      </div>
+      <div class="text-center p-2 m-2">
+        <a href="quiz.htm">
+          <button type="button" class="btn btn-primary w-50 " data-i18n="Start">Start</button>
+        </a>
+      </div>
+    </div>
+    <script src="src/js/translate.js"></script>
+    <script src="src/js/test.js">
+
+    </script>
+</body>
+
+</html>
